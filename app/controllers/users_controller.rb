@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       # show errors
       puts("User not saved: " + @user.errors.full_messages.to_s)
       flash[:danger] = "User not saved: " + @user.errors.full_messages.to_s
-      render 'new'
+      render :new, status: :unprocessable_entity
+
     end
 
   end

@@ -2,15 +2,54 @@
 
   <h1 class="font-bold text-4xl">Users#new</h1>
 
-  <%= form_tag("/users", method: "post") do %>
-    <%= label_tag "username" %>
-    <%= text_field_tag "user[username]" %>
-    <%= label_tag "email" %>
-    <%= text_field_tag "user[email]" %>
-    <%= label_tag "password" %>
-    <%= password_field_tag "user[password]" %>
-    <%= submit_tag "Create User " %>
-  <% end %>
+  <div class="flex">  <%= form_with model: @user do |user| %>
+      <div>
+        <%= user.label :username %>
+        <%= user.text_field :username %>
+      </div>
+      <div>
+        <%= user.label :email %>
+        <%= user.text_field :email %>
+      </div>
+      <div>
+        <%= user.label :password %>
+        <%= user.password_field :password %>
+      </div>
+      <div>
+        <%= user.submit "Create User" %>
+      </div>
+
+
+    <% end %>
+  </div>
+  <!--  <form action="/users" method="post" accept-charset="UTF-8">-->
+
+  <!--    <input type="hidden" name="authenticity_token" value="<%#= form_authenticity_token %>">-->
+
+  <!--    <label for="name">Name</label>-->
+  <!--    <input type="text" name="user[username]" id="name"/>-->
+
+  <!--    <label for="email">Email</label>-->
+  <!--    <input type="text" name="user[email]" id="email"/>-->
+
+  <!--    <label for="password">Password</label>-->
+  <!--    <input type="password" name="user[password]" id="password"/>-->
+
+  <!--    <button type="submit">Create</button>-->
+
+  <!--  </form>-->
+
+
+
+  <%#= form_tag("/users", method: "post") do %>
+  <%#= label_tag "username" %>
+  <%#= text_field_tag "user[username]" %>
+  <%#= label_tag "email" %>
+  <%#= text_field_tag "user[email]" %>
+  <%#= label_tag "password" %>
+  <%#= password_field_tag "user[password]" %>
+  <%#= submit_tag "Create User " %>
+  <%# end %>
 
 
   <% if flash[:success] %>
