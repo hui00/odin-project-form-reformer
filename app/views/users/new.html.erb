@@ -1,4 +1,20 @@
 <div>
+
   <h1 class="font-bold text-4xl">Users#new</h1>
-  <p>Find me in app/views/users/new.html.erb</p>
+
+  <%= form_tag("/users", method: "post") do %>
+    <%= label_tag "username" %>
+    <%= text_field_tag "user[username]" %>
+    <%= label_tag "email" %>
+    <%= text_field_tag "user[email]" %>
+    <%= label_tag "password" %>
+    <%= password_field_tag "user[password]" %>
+    <%= submit_tag "Create User " %>
+  <% end %>
+
+
+  <% if flash[:success] %>
+    <p><%= flash[:success] %></p>
+  <% end %>
+
 </div>
