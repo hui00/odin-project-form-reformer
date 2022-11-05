@@ -1,7 +1,5 @@
 <div>
-
-  <h1 class="font-bold text-4xl">Users#new</h1>
-
+  <h1 class="font-bold text-4xl ">Users#new</h1>
   <div class="flex">  <%= form_with model: @user do |user| %>
       <div>
         <%= user.label :username %>
@@ -18,28 +16,19 @@
       <div>
         <%= user.submit "Create User" %>
       </div>
-
-
     <% end %>
   </div>
+
   <!--  <form action="/users" method="post" accept-charset="UTF-8">-->
-
   <!--    <input type="hidden" name="authenticity_token" value="<%#= form_authenticity_token %>">-->
-
   <!--    <label for="name">Name</label>-->
   <!--    <input type="text" name="user[username]" id="name"/>-->
-
   <!--    <label for="email">Email</label>-->
   <!--    <input type="text" name="user[email]" id="email"/>-->
-
   <!--    <label for="password">Password</label>-->
   <!--    <input type="password" name="user[password]" id="password"/>-->
-
   <!--    <button type="submit">Create</button>-->
-
   <!--  </form>-->
-
-
 
   <%#= form_tag("/users", method: "post") do %>
   <%#= label_tag "username" %>
@@ -51,9 +40,7 @@
   <%#= submit_tag "Create User " %>
   <%# end %>
 
-
   <% if flash[:success] %>
     <p><%= flash[:success] %></p>
   <% end %>
-
 </div>
